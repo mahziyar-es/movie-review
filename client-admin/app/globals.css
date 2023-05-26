@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.gamon-confirm__title{
+  font-size: 20px;
+}
+
+.gamon-confirm__text{
+  margin-top: 20px;
+}

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  overflow: hidden;
+}
+html,
+body {
+  max-width: 100vw;
+  overflow: auto;
+}
+
+
+.hide{
+  transform: scale(1.05);
+  opacity: 0;
+}
