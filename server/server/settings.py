@@ -98,7 +98,8 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movie_review',
+        "HOST": os.environ.get('DB_HOST'), 
+        'NAME': os.environ.get('DB_NAME'),  
         'USER': os.environ.get('DB_USER'),  
         'PASSWORD': os.environ.get('DB_PASSWORD'),  
     }

@@ -5,28 +5,40 @@ services:
       context: ./client
       dockerfile: Dockerfile
     ports:
-      - '3502:3502'
+      - '83:3000'
     restart: always
     depends_on:
       - server
+    networks:
+      - custom
+
+
   client-admin:
     build:
       context: ./client-admin
       dockerfile: Dockerfile
     restart: always
     ports:
-      - '3501:3501'
+      - '8003:3000'
     depends_on:
       - server
+    networks:
+      - custom
+
+
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
     restart: always
     ports:
-      - '8000:8000'
+      - '3003:8000'
     depends_on:
       - database
+    networks:
+      - custom
+
+
   database:
     image: mysql:8
     restart: always
@@ -36,5 +48,9 @@ services:
       - MYSQL_PASSWORD='some_password'
       - MYSQL_ROOT_PASSWORD='some_password'
       - MYSQL_HOST='localhost'
-    ports:
-      - '3306:3306'
+    networks:
+      - custom
+
+
+networks:
+  custom:
