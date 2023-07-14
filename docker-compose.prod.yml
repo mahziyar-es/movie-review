@@ -7,7 +7,7 @@ services:
     ports:
       - '83:3000'
     restart: always
-    env_file: ./server/.env.local
+    env_file: ./client/.env.local
     depends_on:
       - server
     networks:
@@ -19,7 +19,7 @@ services:
       context: ./client-admin
       dockerfile: Dockerfile.prod
     restart: always
-    env_file: ./server/.env.local
+    env_file: ./client-admin/.env.local
     ports:
       - '8003:3000'
     depends_on:
