@@ -46,6 +46,7 @@ services:
 
   db:
     image: mysql:8
+    container_name: movie_mysql
     restart: always
     environment:
       MYSQL_DATABASE: movie_review
