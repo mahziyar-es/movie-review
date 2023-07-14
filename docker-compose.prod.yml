@@ -34,6 +34,8 @@ services:
       dockerfile: Dockerfile.prod
     restart: always
     env_file: ./server/.env.local
+    volumes:
+      - ./server:/app
     ports:
       - '3003:8000'
     depends_on:
@@ -50,6 +52,8 @@ services:
       MYSQL_ROOT_PASSWORD: "123"
       MYSQL_PASSWORD: "123"
       MYSQL_ALLOW_EMPTY_PASSWORD: true
+    volumes:
+      - ./mysql_data:/var/lib/mysql
     networks:
       - custom
 
