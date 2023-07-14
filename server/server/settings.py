@@ -21,7 +21,7 @@ load_dotenv('.env.local')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-BASE_URL = 'http://127.0.0.1:8000'
+BASE_URL = f"http://{os.environ.get('DOMAIN')}:{os.environ.get('PORT')}"
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get('DOMAIN'),]
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
