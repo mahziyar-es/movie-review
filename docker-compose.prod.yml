@@ -53,6 +53,7 @@ services:
       MYSQL_PASSWORD: "123"
       MYSQL_ALLOW_EMPTY_PASSWORD: true
     volumes:
+      - ./docker/mysql:/etc/mysql/my.cnf
       - ./mysql_data:/var/lib/mysql
     networks:
       - custom
