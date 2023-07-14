@@ -37,12 +37,12 @@ services:
     ports:
       - '3003:8000'
     depends_on:
-      - database
+      - db
     networks:
       - custom
 
 
-  database:
+  db:
     image: mysql:8
     restart: always
     environment:
