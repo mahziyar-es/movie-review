@@ -30,11 +30,11 @@ const Slider = (
 
         let images = []
         images = slides.map(review => (
-            <Link href={'/review/'+review.id}  key={review.id}>
+            <Link href={'/review/'+review.id}  key={review.id} className="min-w-full min-h-full">
                 <img
                     src={review.thumbnail}
                     alt={review.title}
-                    className='rounded-md shadow-2xl shadow-black min-w-[100%] min-h-[100%]'
+                    className='rounded-md shadow-2xl shadow-black w-full h-[230px] md:h-[300px] lg:h-[500px]'
                 />
             </Link>
         ))
