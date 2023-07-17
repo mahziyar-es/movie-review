@@ -11,9 +11,9 @@ from ..serializers import IndexReviewSerializer
 @api_view(['GET'])
 def index(req):
 
-    yesterday = datetime.now() - timedelta(1)
+    # yesterday = datetime.now() - timedelta(1)
 
-    new_reviews = models.Review.objects.filter(created_at__gt = yesterday)[0:5]
+    new_reviews = models.Review.objects.order_by('-id')[0:5]
 
     review_serializer = IndexReviewSerializer(new_reviews, many=True)
 
